@@ -10,9 +10,9 @@
 <body>
     <header class="header">
 
-            <a href="">Home</a>
+            <a href="index.php">Home</a>
             <img src="logobanana.png" alt="logo">
-            <a href="">Cart</a>
+            <a href="cart.php">Cart</a>
     </header>
     <div class="product-grid">
         <?php
@@ -26,6 +26,10 @@
                                 <h1>'.$row["brand"].'</h1>
                                 <h2>'.$row["description"].'</h2>
                                 <h1>'.$row["price"].' kr</h1>
+                                    <form action="receiver.php" method="post">
+                                    <input type="hidden" name="item" value="'.$row["id"].'">
+                                    <button type="submit">Add To cart</button>
+                                </form>
                             </div>
                         </div>';
                 }
@@ -36,6 +40,5 @@
         <p>Banana Botique - Founded by Sami</p>
         <img src="logobanana.png" alt="logo" class="footer-logo">
     </footer>
-
 </body>
 </html>
